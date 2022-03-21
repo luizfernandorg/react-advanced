@@ -15,11 +15,8 @@ const ControlledInputs = () => {
     if(firstName && email){
       let person = { id: new Date().getTime().toString(), firstName, email}
       setPeople((people) => {
-        people.push(person)
-        return people
+        return [...people, person]
       })
-      
-      console.log(people)
     }else{
       console.log("empty values")
     }
