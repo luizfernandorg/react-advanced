@@ -7,14 +7,21 @@ import React, { useState } from 'react';
 // dynamic object keys
 
 const ControlledInputs = () => {
-  const {person, setPerson} = useState({id: 0, firstName:'', age:'', email:''})
-  const {people, setPeople} = useState([])
-
+  const [person, setPerson] = useState({id: 0, firstName:'', age:0, email:''})
+  const [people, setPeople] = useState([])
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+    setPeople((p) => {
+      p = [...p, person]
+      console.log(p)
+      return p
+    })
   }
   const handleChange = (e) => {
-
+    const name = e.target.name
+    const value = e.target.value
+    setPerson({...person,id: new Date().getTime().toString(),[name]:value})
   }
   return (
     <>
