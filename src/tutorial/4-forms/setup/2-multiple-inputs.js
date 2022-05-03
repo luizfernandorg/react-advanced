@@ -12,16 +12,14 @@ const ControlledInputs = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPeople((p) => {
-      p = [...p, person]
-      console.log(p)
-      return p
-    })
+    const newPerson = {...person,id: new Date().getTime().toString()}
+    setPeople([...people, newPerson])
+    setPerson({id:0, firstName:'', age:0, email:''})
   }
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    setPerson({...person,id: new Date().getTime().toString(),[name]:value})
+    setPerson({...person,[name]:value})
   }
   return (
     <>
