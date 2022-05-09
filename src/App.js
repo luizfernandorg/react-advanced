@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/9-custom-hooks/setup/1-fetch-example'
+import Setup from './tutorial/11-react-router/setup/'
 
 
 function App() {
@@ -11,3 +11,4 @@ function App() {
 }
 
 export default App
+//8:38:58
